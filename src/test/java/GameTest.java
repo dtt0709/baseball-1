@@ -58,6 +58,8 @@ public class GameTest {
     void returnSolvedResultSomeMatchedNumber(){
         generateQuestion("123");
         assertMAtchedNumber(game.guess("120"), false, 2, 0);
+        assertMAtchedNumber(game.guess("061"), false, 0, 1);
+        assertMAtchedNumber(game.guess("136"), false, 1, 1);
     }
 
     private static void assertMAtchedNumber(GuessResult result, boolean solved, int strikes, int balls) {
