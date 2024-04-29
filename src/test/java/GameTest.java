@@ -54,6 +54,12 @@ public class GameTest {
         assertMAtchedNumber(game.guess("456"), false, 0, 0);
     }
 
+    @Test
+    void returnSolvedResultSomeMatchedNumber(){
+        generateQuestion("123");
+        assertMAtchedNumber(game.guess("120"), false, 2, 0);
+    }
+
     private static void assertMAtchedNumber(GuessResult result, boolean solved, int strikes, int balls) {
         assertThat(result).isNotNull();
         assertThat(result.isSolved()).isEqualTo(solved);
